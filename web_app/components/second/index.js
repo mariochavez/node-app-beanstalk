@@ -1,6 +1,7 @@
 import React from 'react';
 import { browserHistory } from 'react-router'
 import secondStore from '../../store/SecondStore';
+import Navbar from '../shared/Navbar';
 
 const SecondContainer = React.createClass ({
   getInitialState() {
@@ -22,10 +23,17 @@ const SecondContainer = React.createClass ({
   },
 
   render() {
-    return <div className="container-fluid">
-      <h1>Second Component</h1>
-      <h2>Server Time: {this.state.date}</h2>
-      <button onClick={this.goToWellcome}>Go to wellcome</button>
+    return <div>
+      <Navbar></Navbar>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-sm-12">
+            <h1>Second Component</h1>
+            <button onClick={this.goToWellcome} className="btn btn-primary">Go to wellcome</button>
+            <h2>Server Time: {this.state.date}</h2>
+          </div>
+        </div>
+      </div>
     </div>;
   }
 });
