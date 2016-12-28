@@ -1,0 +1,6 @@
+node_modules
+.DS_Store
+**/.DS_Store
+dump.rdb
+npm-debug.log
+public/js/main.js

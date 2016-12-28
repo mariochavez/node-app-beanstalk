@@ -3,7 +3,12 @@ var router = express.Router();
 
 /* GET second page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express 2.0' });
+  res.render('index');
+});
+
+router.get('/date', function(req, res, next) {
+  const date = new Date().toString();
+  res.json(date);
 });
 
 module.exports = router;
