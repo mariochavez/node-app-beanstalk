@@ -11,15 +11,18 @@ var second = require('./routes/second');
 
 var webpack = require('webpack');
 
-var config = require('./webpack.config');
 
 var app = express();
 
-var compiler = webpack(config);
-app.use(require('webpack-dev-middleware')(compiler, {
-  noInfo: true,
-  publicPath: config.output.publicPath
-}));
+if(!(process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'sandbox')){
+  var config = require('./webpack.config');
+  var compiler = webpack(config);
+
+  app.use(require('webpack-dev-middleware')(compiler, {
+    noInfo: true,
+    publicPath: config.output.publicPath
+  }));
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
