@@ -13,12 +13,12 @@ const SecondContainer = React.createClass ({
   componentWillMount() {
     secondStore.getDate(data => {
       this.setState({
-      	date: data
+        date: data
       });
     })
   },
 
-  goToWellcome() {
+  goToWelcome() {
     browserHistory.push('/');
   },
 
@@ -29,7 +29,7 @@ const SecondContainer = React.createClass ({
         <div className="row">
           <div className="col-sm-12">
             <h1>Second Component</h1>
-            <button onClick={this.goToWellcome} className="btn btn-primary">Go to wellcome</button>
+            <button onClick={this.goToWelcome} className="btn btn-primary">Go to welcome</button>
             <h2>Server Time: {this.state.date}</h2>
           </div>
         </div>

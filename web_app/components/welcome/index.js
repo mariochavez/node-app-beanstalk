@@ -2,7 +2,7 @@ import React from 'react';
 import { browserHistory } from 'react-router';
 import Navbar from '../shared/Navbar';
 
-const WellcomeContainer = React.createClass ({
+const WelcomeContainer = React.createClass ({
   goToSecond() {
     browserHistory.push('/second');
   },
@@ -13,7 +13,7 @@ const WellcomeContainer = React.createClass ({
       <div className="container-fluid">
         <div className="row">
           <div className="col-sm-12">
-            <h1>Wellcome Component</h1>
+            <h1>Welcome Component</h1>
             <button onClick={this.goToSecond} className="btn btn-warning">Go to second</button>
           </div>
         </div>
@@ -22,4 +22,4 @@ const WellcomeContainer = React.createClass ({
   }
 });
 
-export default WellcomeContainer;
+export default WelcomeContainer;
